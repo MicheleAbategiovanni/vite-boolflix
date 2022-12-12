@@ -5,6 +5,8 @@ export const store = reactive({
 
     searchText: "",
     loading: false,
+    movieList: [],
+    serieList: [],
 
 });
 
@@ -16,11 +18,14 @@ export function fetchMovies() {
         params: {
             api_key: '320185988973d0ae03a4ed5de02ddb4d',
             query: store.searchText,
+            language: 'it-IT',
         }
     })
 
         .then((resp) => {
-            console.log(resp.data);
+            console.log(resp.data.results);
+
+            store.movieList = resp.data.results;
         })
 
         .catch((error) => {
