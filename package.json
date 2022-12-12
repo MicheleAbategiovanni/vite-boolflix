@@ -9,10 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@growthbunker/vueflags": "^0.1.14",
     "@popperjs/core": "^2.11.6",
     "axios": "^1.2.1",
     "bootstrap": "^5.2.3",
-    "vue": "^3.2.45"
+    "country-flag-icons": "^1.5.5",
+    "vue": "^3.2.45",
+    "vue-country-flag-next": "^2.3.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",

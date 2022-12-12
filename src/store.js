@@ -21,11 +21,27 @@ export function fetchMovies() {
             language: 'it-IT',
         }
     })
+    .then((resp) => {
+        console.log(resp.data.results);
 
-        .then((resp) => {
-            console.log(resp.data.results);
+        store.movieList = resp.data.results;
 
-            store.movieList = resp.data.results;
+    })
+
+
+    axios.get("https://api.themoviedb.org/3/search/tv", {
+        params: {
+            api_key: '320185988973d0ae03a4ed5de02ddb4d',
+            query: store.searchText,
+            language: 'it-IT',
+        }
+    })
+
+        .then((resp2) => {
+            console.log(resp2.data.results);
+
+            store.serieList = resp2.data.results;
+
         })
 
         .catch((error) => {
