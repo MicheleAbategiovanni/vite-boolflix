@@ -9,7 +9,7 @@
                 <div>
                     <h2 class="text-center text-danger">FILM</h2>
 
-                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 py-3">
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-3 py-3">
 
                         <div class="col" v-for="card, i in store.movieList" :key="i + '_movies'">
 
