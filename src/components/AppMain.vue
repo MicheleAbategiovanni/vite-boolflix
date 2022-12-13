@@ -2,39 +2,51 @@
 
     <main>
 
-        <div class="container py-3">
+        <!-- Container Movies -->
+        <section v-show="store.movieList.length > 0">
+            <div class="container py-3">
 
-            <!-- Container Movies -->
-            <div>
-                <h2 class="text-center text-danger">FILM</h2>
+                <div>
+                    <h2 class="text-center text-danger">FILM</h2>
 
-                <div class="row row-cols-3 g-3 py-3">
+                    <div class="row row-cols-3 g-3 py-3">
 
-                    <div class="col" v-for="card, i in store.movieList" :key="i + '_movies'">
+                        <div class="col" v-for="card, i in store.movieList" :key="i + '_movies'">
 
-                        <AppCard :movie="card" />
+                            <AppCard :movie="card" />
+
+                        </div>
 
                     </div>
 
                 </div>
+
             </div>
 
-            <!-- Container Series TV -->
-            <div>
-                <h2 class="text-center text-danger">Serie TV</h2>
-                <div class="row row-cols-3 g-3">
-    
-    
-                    <div class="col" v-for="card, i in store.serieList" :key="i + '_movies'">
-    
-                        <AppCard :movie="card" />
-    
+        </section>
+
+        <!-- Container Series TV -->
+        <section v-show="store.serieList.length > 0">
+            <div class="container py-3">
+                <!-- Container Series TV -->
+                <div>
+                    <h2 class="text-center text-danger">Serie TV</h2>
+
+                    <div class="row row-cols-3 g-3">
+
+
+                        <div class="col" v-for="card, i in store.serieList" :key="i + '_movies'">
+
+                            <AppCard :movie="card" />
+
+                        </div>
+
                     </div>
-    
-                </div>
-            </div>
 
-        </div>
+                </div>
+
+            </div>
+        </section>
 
     </main>
 
@@ -57,11 +69,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-.container {
-    &>*{
-        padding: 4rem 0;
-    }
-}
 
 </style>
