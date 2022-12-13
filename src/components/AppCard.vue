@@ -1,65 +1,37 @@
 <template>
 
-    <div class="col" v-for="card, i in store.movieList" :key="i + '_card'">
-
-        <div class="card">
-            <div>
-                <span class="fs-3 fw-bold">Titolo: </span>
-                <span>{{ card.title }}</span>
-            </div>
-
-            <div>
-                <span class="fs-3 fw-bold">Titolo Originale: </span>
-                <span>{{ card.original_title }}</span>
-            </div>
-
-            <div>
-                <span class="fs-3 fw-bold">Lingua: </span>
-                <span>{{ card.original_language }}</span>
-            </div>
-
-            <div>
-                <span class="fs-3 fw-bold">Voto: </span>
-                <span>{{ card.vote_average }}</span>
-
-            </div>
+    <div class="card">
+        <div>
+            <span class="fs-3 fw-bold">Titolo: </span>
+            <span>{{ getName }}</span>
         </div>
 
-    </div>
-
-    <div class="col" v-for="card, i in store.serieList" :key="i + '_card'">
-
-        <div class="card">
-            <div>
-                <span class="fs-3 fw-bold">Titolo: </span>
-                <span>{{ card.name }}</span>
-            </div>
-
-            <div>
-                <span class="fs-3 fw-bold">Titolo Originale: </span>
-                <span>{{ card.original_name }}</span>
-            </div>
-
-            <div>
-                <span class="fs-3 fw-bold">Lingua: </span>
-                <span>{{ card.original_language }}</span>
-            </div>
-
-            <div>
-                <span class="fs-3 fw-bold">Voto: </span>
-                <span>{{ card.vote_average }}</span>
-
-            </div>
+        <div>
+            <span class="fs-3 fw-bold">Titolo Originale: </span>
+            <span>{{ getOriginalName }}</span>
         </div>
 
+        <div>
+            <span class="fs-3 fw-bold">Lingua: </span>
+            <span>{{ movie.original_language }}</span>
+        </div>
+
+        <div>
+            <span class="fs-3 fw-bold">Voto: </span>
+            <span>{{ movie.vote_average }}</span>
+        </div>
     </div>
 
 </template>
 
 <script>
 import { store } from '../store.js';
-export default {
 
+export default {
+    name: 'AppCard',
+    props: {
+        movie: Object,
+    },
     data() {
         return {
             store,
@@ -67,6 +39,14 @@ export default {
     },
     methods: {
     },
+    computed: {
+        getName() {
+            return this.movie.title ? this.movie.title : this.movie.name
+        },
+        getOriginalName() {
+            return this.movie.original_title ? this.movie.original_title : this.movie.original_name
+        }
+    }
 }
 </script>
 

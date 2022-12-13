@@ -21,12 +21,12 @@ export function fetchMovies() {
             language: 'it-IT',
         }
     })
-    .then((resp) => {
-        console.log(resp.data.results);
+        .then((resp) => {
+            console.log("Movie: ", resp.data.results);
 
-        store.movieList = resp.data.results;
+            store.movieList = resp.data.results;
 
-    })
+        })
 
 
     axios.get("https://api.themoviedb.org/3/search/tv", {
@@ -38,7 +38,7 @@ export function fetchMovies() {
     })
 
         .then((resp2) => {
-            console.log(resp2.data.results);
+            console.log("Series:", resp2.data.results);
 
             store.serieList = resp2.data.results;
 
