@@ -21,6 +21,7 @@
         <div>
             <span class="fs-3 fw-bold">Voto: </span>
             <span>{{ getVoted }}</span>
+            <span><i class="bi bi-star-fill"></i></span>
         </div>
 
     </div>
