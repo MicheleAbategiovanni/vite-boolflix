@@ -25,7 +25,7 @@ export default {
 @use "./styles/general.scss";
 
 body{
-  background-color: rgba(0, 0, 0, 0.815);
+  background-color: rgb(27,27,27);
 }
 
 

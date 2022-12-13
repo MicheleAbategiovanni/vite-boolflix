@@ -1,7 +1,8 @@
 <template>
 
     <div class="card position-relative">
-        <img :src="`https://image.tmdb.org/t/p/w342${movie.poster_path}`" :alt=getName class="img-fluid">
+
+        <img :src="`https://image.tmdb.org/t/p/w342${movie.poster_path}`" :alt=getName class="img-fluid rounded-2">
 
         <div class="overview-card position-absolute">
 
@@ -37,8 +38,6 @@
             </div>
 
         </div>
-
-
 
     </div>
 
