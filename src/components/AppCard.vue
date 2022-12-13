@@ -13,25 +13,28 @@
 
         <div>
             <span class="fs-3 fw-bold">Lingua: </span>
-            <span>{{ movie.original_language }}</span>
+            <lang-flag :iso="movie.original_language" />
         </div>
 
         <div>
             <span class="fs-3 fw-bold">Voto: </span>
             <span>{{ movie.vote_average }}</span>
         </div>
+
     </div>
 
 </template>
 
 <script>
 import { store } from '../store.js';
+import LangFlag from 'vue-lang-code-flags';
 
 export default {
     name: 'AppCard',
     props: {
         movie: Object,
     },
+    components: { LangFlag },
     data() {
         return {
             store,
