@@ -1,6 +1,8 @@
 <template>
 
     <div class="card">
+        <img :src="`https://image.tmdb.org/t/p/w342${movie.poster_path}`" :alt=getName>
+
         <div>
             <span class="fs-3 fw-bold">Titolo: </span>
             <span>{{ getName }}</span>
@@ -48,7 +50,7 @@ export default {
         },
         getOriginalName() {
             return this.movie.original_title ? this.movie.original_title : this.movie.original_name
-        }
+        },
     }
 }
 </script>
