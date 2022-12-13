@@ -20,7 +20,7 @@
 
         <div>
             <span class="fs-3 fw-bold">Voto: </span>
-            <span>{{ movie.vote_average }}</span>
+            <span>{{ getVoted }}</span>
         </div>
 
     </div>
@@ -51,6 +51,9 @@ export default {
         getOriginalName() {
             return this.movie.original_title ? this.movie.original_title : this.movie.original_name
         },
+        getVoted () {
+            return Math.ceil(this.movie.vote_average / 2);
+        }
     }
 }
 </script>
