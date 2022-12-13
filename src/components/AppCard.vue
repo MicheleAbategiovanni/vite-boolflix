@@ -20,8 +20,13 @@
 
         <div>
             <span class="fs-3 fw-bold">Voto: </span>
-            <span>{{ getVoted }}</span>
-            <span><i class="bi bi-star-fill"></i></span>
+            <span v-for="vote in 5">
+
+                <i class="bi bi-star-fill" v-if="getVoted >= vote"></i>
+                <i class="bi bi-star" v-else="getVoted = 0"></i>
+
+            </span>
+
         </div>
 
     </div>
@@ -52,7 +57,7 @@ export default {
         getOriginalName() {
             return this.movie.original_title ? this.movie.original_title : this.movie.original_name
         },
-        getVoted () {
+        getVoted() {
             return Math.ceil(this.movie.vote_average / 2);
         }
     }
