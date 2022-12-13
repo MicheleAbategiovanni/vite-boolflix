@@ -37,6 +37,7 @@
 
                         <div class="col" v-for="card, i in store.serieList" :key="i + '_movies'">
 
+                            <!-- Movie refers to series ! -->
                             <AppCard :movie="card" />
 
                         </div>
