@@ -7,7 +7,7 @@
             <div class="container py-3 ">
 
                 <div>
-                    <h2 class="text-center text-danger">FILM</h2>
+                    <h2 class="text-center text-red">FILM</h2>
 
                     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 py-3 g-3">
 
@@ -70,5 +70,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.text-red{
+    color: #DB202C;
+}
 
 </style>

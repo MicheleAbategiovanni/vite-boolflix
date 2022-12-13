@@ -92,6 +92,8 @@ export default {
             left: 0;
             transition: all 2s;
             overflow: auto;
+            border: 1px solid;
+            border-radius: .5rem;
         }
     }
 }
