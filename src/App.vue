@@ -2,9 +2,9 @@
 <template>
 
 
-<AppHeader />
+  <AppHeader />
 
-<AppMain />
+  <AppMain />
 
 
 </template>
@@ -16,7 +16,7 @@ import AppMain from './components/AppMain.vue';
 
 export default {
   components: { AppHeader, AppMain }
-  
+
 }
 
 </script>
@@ -24,9 +24,7 @@ export default {
 <style lang="scss">
 @use "./styles/general.scss";
 
-body{
-  background-color: rgb(27,27,27);
+body {
+  background-color: rgb(27, 27, 27);
 }
-
-
 </style>

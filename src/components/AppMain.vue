@@ -2,6 +2,52 @@
 
     <main>
 
+        <!-- Container Movies Popular -->
+        <section v-if="store.searchText == '' ">
+            <div class="container py-5 ">
+
+                <div>
+                    <h2 class="text-red">FILM POPOLARI</h2>
+
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 py-3 g-3 flex-nowrap overflow-auto">
+
+                        <div class="col" v-for="card, i in store.moviePopularList" :key="i + '_movies'">
+
+                            <AppCard :movie="card" />
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Container Series Popular -->
+        <section v-if="store.searchText == '' ">
+            <div class="container py-5 ">
+
+                <div>
+                    <h2 class="text-red">SERIE TV - POPOLARI</h2>
+
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 gx-3 flex-nowrap overflow-auto">
+
+                        <div class="col" v-for="card, i in store.seriesPopularList" :key="i + '_movies'">
+
+                            <AppCard :movie="card" />
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
         <!-- Container Movies -->
         <section v-show="store.movieList.length > 0">
             <div class="container py-3 ">
@@ -56,7 +102,12 @@
 
 <script>
 import AppCard from './AppCard.vue';
-import { store } from '../store.js';
+import {
+
+    store,
+    createPopularMovie,
+
+} from '../store.js';
 
 
 export default {
@@ -65,14 +116,15 @@ export default {
         return {
             store,
         }
-    }
+    },
+    created() {
+        createPopularMovie()
+    },
 }
 </script>
 
 <style lang="scss" scoped>
-
-.text-red{
+.text-red {
     color: #DB202C;
 }
-
 </style>
