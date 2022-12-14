@@ -10,6 +10,7 @@ export const store = reactive({
     moviePopularList: [],
     seriesPopularList: [],
     jumbotronList: [],
+    cardSelected: [],
 
 });
 

@@ -1,6 +1,6 @@
 <template>
 
-    <div class="card position-relative">
+    <div class="card position-relative" @click="getCard">
 
         <img :src="`https://image.tmdb.org/t/p/w342${movie.poster_path}`" :alt=getName class="img-fluid rounded-2">
 
@@ -59,6 +59,7 @@ export default {
         }
     },
     methods: {
+
     },
     computed: {
         getName() {
@@ -69,6 +70,15 @@ export default {
         },
         getVoted() {
             return Math.ceil(this.movie.vote_average / 2);
+        },
+        getCard() {
+
+            console.log("CARD cliccata", this.movie);
+
+            this.store.cardSelected = this.movie;
+
+            console.log("Preso", this.store.cardSelected)
+
         }
     }
 }

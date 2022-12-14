@@ -2,6 +2,11 @@
 
     <main>
 
+        <!-- Jumbotron -->
+        <section>
+            <AppJumbotron />
+        </section>
+
         <!-- Container Movies Popular -->
         <section v-if="store.searchText == ''">
             <div class="p-5">
@@ -13,7 +18,10 @@
 
                     <div class="col" v-for="card, i in store.moviePopularList" :key="i + '_moviesPopular'">
 
-                        <AppCard :movie="card" />
+                        <a href="#">
+                            <AppCard :movie="card" />
+
+                        </a>
 
                     </div>
 
@@ -29,17 +37,17 @@
         <section v-if="store.searchText == ''">
             <div class="p-5">
 
-                    <h2 class="text-red">SERIE TV - POPOLARI</h2>
+                <h2 class="text-red">SERIE TV - POPOLARI</h2>
 
-                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-3 gy-0 flex-nowrap overflow-auto">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-3 gy-0 flex-nowrap overflow-auto">
 
-                        <div class="col" v-for="card, i in store.seriesPopularList" :key="i + '_seriesPopular'">
+                    <div class="col" v-for="card, i in store.seriesPopularList" :key="i + '_seriesPopular'">
 
-                            <AppCard :movie="card" />
-
-                        </div>
+                        <AppCard :movie="card" />
 
                     </div>
+
+                </div>
 
             </div>
 
@@ -99,6 +107,7 @@
 
 <script>
 import AppCard from './AppCard.vue';
+import AppJumbotron from './AppJumbotron.vue';
 import {
 
     store,
@@ -108,7 +117,7 @@ import {
 
 
 export default {
-    components: { AppCard },
+    components: { AppCard, AppJumbotron },
     data() {
         return {
             store,
