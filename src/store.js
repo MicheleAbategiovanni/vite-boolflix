@@ -9,13 +9,14 @@ export const store = reactive({
     serieList: [],
     moviePopularList: [],
     seriesPopularList: [],
+    jumbotronList: [],
 
 });
 
 export function fetchMovies() {
 
     console.log("CLICCATO CERCA BOTTONE");
-    
+
 
     axios.get("https://api.themoviedb.org/3/search/movie", {
         params: {
@@ -94,3 +95,24 @@ export function createPopularMovie() {
             store.loading = false;
         });
 }
+
+// export function startVideo(){
+    
+//     console.log("Video started");
+
+//     axios.get("https://api.themoviedb.org/3/movie/436270/videos", {
+//         params: {
+//             api_key: '320185988973d0ae03a4ed5de02ddb4d',
+//             language: 'it-IT',
+//         }
+//     })
+
+//     .then((resp) => {
+//         console.log("Jumbotron: ", resp.data.results);
+
+//         store.jumbotronList = resp.data.results;
+
+//     })
+
+
+// }

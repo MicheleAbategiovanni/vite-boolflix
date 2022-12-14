@@ -3,7 +3,7 @@
     <header>
         <nav class="navbar navbar-expand-lg p-3">
 
-            <div class="container-fluid">
+            <div class="container-fluid flex-grow-1">
 
                 <div>
                     <a class="navbar-brand" href="localhost">

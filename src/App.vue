@@ -26,5 +26,6 @@ export default {
 
 body {
   background-color: rgb(27, 27, 27);
+  height: 100vh;
 }
 </style>
