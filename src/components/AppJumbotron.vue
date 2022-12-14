@@ -2,20 +2,17 @@
 
     <div class="p-5">
 
-        <div class="row text-white">
+        <div class="row row-cols-1 row-cols-md-2 text-white">
             <div class="col">
                 <div>
-                    <h3>Titolo:</h3>
-                    <span>{{ getName }}</span>
+                    <h1>{{ getName }}</h1>
                 </div>
 
                 <div>
-                    <h3 v-show="store.cardSelected.overview !== '' ">Trama</h3>
-                    <span>{{ store.cardSelected.overview }}</span>
+                    <p v-show="store.cardSelected.overview !== ''">{{ store.cardSelected.overview }}</p>
                 </div>
 
                 <div>
-                    <span class="fs-3 fw-bold">Voto: </span>
                     <span v-for="vote in 5">
 
                         <i class="bi bi-star-fill" v-if="getVoted >= vote"></i>
@@ -24,16 +21,25 @@
                     </span>
                 </div>
 
-                <div>
-                    <button class="btn btn-primary px-3 rounded-5">
-                        <i class="bi bi-play-fill"></i>
-                        Guarda ora
-                    </button>
-                    <button class="btn btn-primary px-3 rounded-5">Trailer</button>
+                <div class="py-5">
+                    <span>
+
+                        <button class="btn btn-primary px-3 rounded-5">
+                            <i class="bi bi-play-fill"></i>
+                            Guarda ora
+                        </button>
+                    </span>
+
+                    <span class="px-3">
+
+                        <button class="btn btn-primary px-3 rounded-5">Trailer</button>
+                    </span>
                 </div>
+
             </div>
 
-            <div class="col">dx</div>
+            <div class="col"></div>
+            
         </div>
 
     </div>
