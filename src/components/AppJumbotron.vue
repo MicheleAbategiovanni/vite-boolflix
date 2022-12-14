@@ -10,7 +10,7 @@
                 </div>
 
                 <div>
-                    <h3>Trama</h3>
+                    <h3 v-show="store.cardSelected.overview !== '' ">Trama</h3>
                     <span>{{ store.cardSelected.overview }}</span>
                 </div>
 
