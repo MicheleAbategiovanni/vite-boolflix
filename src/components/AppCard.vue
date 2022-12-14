@@ -76,24 +76,27 @@ export default {
 
 <style lang="scss" scoped>
 .card {
-    .overview-card{
+    height: 100%;
+
+    .overview-card {
         opacity: 0;
+        padding: 1rem;
+        color: white;
+        background-color: black;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        transition: all 2s;
+        overflow: auto;
+        border: 1px solid;
+        border-radius: .5rem;
     }
 
     &:hover {
         .overview-card {
-            padding:1rem;
-            color: white;
-            background-color: black;
             opacity: .8;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            left: 0;
             transition: all 2s;
-            overflow: auto;
-            border: 1px solid;
-            border-radius: .5rem;
         }
     }
 }
