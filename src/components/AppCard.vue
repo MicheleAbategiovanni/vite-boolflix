@@ -1,7 +1,6 @@
 <template>
 
     <div class="card position-relative border-0 rounded-3" @click="getCard">
-
         <img :src="`https://image.tmdb.org/t/p/w342${movie.poster_path}`" :alt=getName class="img-fluid rounded-2">
 
         <div class="overview-card position-absolute">
@@ -11,7 +10,7 @@
                 <span>{{ getName }}</span>
             </div>
 
-            <div>
+            <div  v-if="getName !== getOriginalName">
                 <span class="fs-3 fw-bold">Titolo Originale: </span>
                 <span>{{ getOriginalName }}</span>
             </div>
@@ -56,6 +55,7 @@ export default {
     data() {
         return {
             store,
+            card: false,
         }
     },
     methods: {
@@ -74,6 +74,7 @@ export default {
         getCard() {
 
             this.store.jumbotronList = this.movie;
+
 
         }
     }
