@@ -43,7 +43,9 @@
 
                     <div class="col" v-for="card, i in store.seriesPopularList" :key="i + '_seriesPopular'">
 
-                        <AppCard :movie="card" />
+                        <a href="#">
+                            <AppCard :movie="card" />
+                        </a>
 
                     </div>
 
@@ -64,7 +66,9 @@
 
                         <div class="col" v-for="card, i in store.movieList" :key="i + '_movies'">
 
-                            <AppCard :movie="card" />
+                            <a href="#">
+                                <AppCard :movie="card" />
+                            </a>
 
                         </div>
 
@@ -88,8 +92,9 @@
 
                         <div class="col" v-for="card, i in store.serieList" :key="i + '_series'">
 
-                            <!-- Movie refers to series ! -->
-                            <AppCard :movie="card" />
+                            <a href="#">
+                                <AppCard :movie="card" />
+                            </a>
 
                         </div>
 
