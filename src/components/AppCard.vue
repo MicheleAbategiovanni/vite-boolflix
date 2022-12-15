@@ -84,10 +84,10 @@ export default {
 .card {
     height: 100%;
 
-    img{
+    img {
         height: 100%;
     }
-    
+
     .overview-card {
         opacity: 0;
         padding: 1rem;
