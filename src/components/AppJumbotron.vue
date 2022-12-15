@@ -1,7 +1,7 @@
 <template>
 
     <section class=""
-        :style="{ backgroundImage: `url(https://image.tmdb.org/t/p/original${store.jumbotronList.backdrop_path}` }"
+        :style="{ backgroundImage: `url(https://image.tmdb.org/t/p/original` + `${getBackground}` }"
         v-if="store.searchText == ''">
 
         <div class="p-5 ">
@@ -25,7 +25,7 @@
                         </span>
                     </div>
 
-                    <div class="py-5">
+                    <div class="py-3">
                         <span>
                             <button class="btn btn-primary px-3 rounded-5">
                                 <i class="bi bi-play-fill"></i>
@@ -71,6 +71,9 @@ export default {
         getVoted() {
             return Math.ceil(this.store.jumbotronList.vote_average / 2);
         },
+        getBackground() {
+            return this.store.jumbotronList.backdrop_path 
+        }
     },
     created() {
         getJumbotronSelected()
