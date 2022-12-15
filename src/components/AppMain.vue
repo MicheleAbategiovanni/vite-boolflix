@@ -98,6 +98,9 @@
             </div>
         </section>
 
+        <section class="text-center">
+            <h5 class="text-info">Created With ♥️ by Michele Abategiovanni</h5>
+        </section>
     </main>
 
 </template>
