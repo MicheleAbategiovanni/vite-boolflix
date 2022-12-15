@@ -6,7 +6,7 @@
         <AppJumbotron />
 
         <!-- Container Movies Popular -->
-        <section v-if="store.searchText == ''" style="margin-top: -170px;">
+        <section v-if="store.searchText == ''" style="margin-top: -140px;">
             <div class="p-5">
 
 
