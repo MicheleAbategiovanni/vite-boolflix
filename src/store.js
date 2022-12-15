@@ -11,13 +11,11 @@ export const store = reactive({
     seriesPopularList: [],
     jumbotronList: [],
     cardSelected: [],
+    jumbotronInfoSelected: [],
 
 });
 
 export function fetchMovies() {
-
-    console.log("CLICCATO CERCA BOTTONE");
-
 
     axios.get("https://api.themoviedb.org/3/search/movie", {
         params: {
@@ -27,7 +25,6 @@ export function fetchMovies() {
         }
     })
         .then((resp) => {
-            console.log("Movie: ", resp.data.results);
 
             store.movieList = resp.data.results;
 
@@ -43,7 +40,6 @@ export function fetchMovies() {
     })
 
         .then((resp2) => {
-            console.log("Series:", resp2.data.results);
 
             store.serieList = resp2.data.results;
 
@@ -59,8 +55,6 @@ export function fetchMovies() {
 
 export function createPopularMovie() {
 
-    console.log("CLICCATO CERCA BOTTONE");
-
     axios.get("https://api.themoviedb.org/3/movie/popular", {
         params: {
             api_key: '320185988973d0ae03a4ed5de02ddb4d',
@@ -68,7 +62,6 @@ export function createPopularMovie() {
         }
     })
         .then((resp) => {
-            console.log("Movie Popular: ", resp.data.results);
 
             store.moviePopularList = resp.data.results;
 
@@ -83,7 +76,6 @@ export function createPopularMovie() {
     })
 
         .then((resp2) => {
-            console.log("Series Popular:", resp2.data.results);
 
             store.seriesPopularList = resp2.data.results;
 
@@ -97,23 +89,16 @@ export function createPopularMovie() {
         });
 }
 
-// export function startVideo(){
-    
-//     console.log("Video started");
+export function getJumbotronSelected() {
 
-//     axios.get("https://api.themoviedb.org/3/movie/436270/videos", {
-//         params: {
-//             api_key: '320185988973d0ae03a4ed5de02ddb4d',
-//             language: 'it-IT',
-//         }
-//     })
+    axios.get("https://api.themoviedb.org/3/movie/popular", {
+        params: {
+            api_key: '320185988973d0ae03a4ed5de02ddb4d',
+            language: 'it-IT',
+        }
+    })
+        .then((resp) => {
+            store.jumbotronList = resp.data.results[0];
+        })
 
-//     .then((resp) => {
-//         console.log("Jumbotron: ", resp.data.results);
-
-//         store.jumbotronList = resp.data.results;
-
-//     })
-
-
-// }
+}
