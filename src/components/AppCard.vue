@@ -1,6 +1,6 @@
 <template>
 
-    <div class="card position-relative" @click="getCard">
+    <div class="card position-relative border-0 rounded-3" @click="getCard">
 
         <img :src="`https://image.tmdb.org/t/p/w342${movie.poster_path}`" :alt=getName class="img-fluid rounded-2">
 
@@ -73,11 +73,7 @@ export default {
         },
         getCard() {
 
-            console.log("CARD cliccata", this.movie);
-
-            this.store.cardSelected = this.movie;
-
-            console.log("Preso", this.store.cardSelected)
+            this.store.jumbotronList = this.movie;
 
         }
     }
@@ -88,6 +84,10 @@ export default {
 .card {
     height: 100%;
 
+    img{
+        height: 100%;
+    }
+    
     .overview-card {
         opacity: 0;
         padding: 1rem;

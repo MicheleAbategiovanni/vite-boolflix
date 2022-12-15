@@ -3,18 +3,16 @@
     <main>
 
         <!-- Jumbotron -->
-        <section>
-            <AppJumbotron />
-        </section>
+        <AppJumbotron />
 
         <!-- Container Movies Popular -->
-        <section v-if="store.searchText == ''">
+        <section v-if="store.searchText == ''" style="margin-top: -170px;">
             <div class="p-5">
 
 
-                <h2 class="text-red">FILM POPOLARI</h2>
+                <h4 class="text-red p-3">FILM POPOLARI</h4>
 
-                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-3 flex-nowrap overflow-auto">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-3 flex-nowrap overflow-auto  rounded-3 bg-card p-3">
 
                     <div class="col" v-for="card, i in store.moviePopularList" :key="i + '_moviesPopular'">
 
@@ -37,9 +35,9 @@
         <section v-if="store.searchText == ''">
             <div class="p-5">
 
-                <h2 class="text-red">SERIE TV - POPOLARI</h2>
+                <h4 class="text-red p-3">SERIE TV - POPOLARI</h4>
 
-                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-3 gy-0 flex-nowrap overflow-auto">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-3 gy-0 flex-nowrap overflow-auto rounded-3 bg-card p-3">
 
                     <div class="col" v-for="card, i in store.seriesPopularList" :key="i + '_seriesPopular'">
 
@@ -137,5 +135,9 @@ export default {
 main {
     height: 90vh;
     overflow: auto;
+}
+
+.bg-card{
+    background-color: #000000a3;
 }
 </style>
